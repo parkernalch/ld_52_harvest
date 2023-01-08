@@ -15,4 +15,4 @@ custom_fonts/font = SubResource( 7 )
 text = "[0000000000]"
 align = 2
 script = ExtResource( 2 )
-current_level = 5
+current_level = 10
