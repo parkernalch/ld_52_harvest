@@ -61,52 +61,52 @@ custom_styles/panel = SubResource( 6 )
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 24
-custom_constants/margin_top = 24
-custom_constants/margin_left = 24
-custom_constants/margin_bottom = 24
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 24.0
-margin_top = 24.0
-margin_right = 334.0
-margin_bottom = 456.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 338.0
+margin_bottom = 460.0
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 310.0
-margin_bottom = 140.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="CenterContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 318.0
+margin_bottom = 115.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer"]
-margin_left = 27.0
-margin_top = 12.0
-margin_right = 283.0
-margin_bottom = 127.0
+margin_right = 318.0
+margin_bottom = 115.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
 custom_fonts/font = SubResource( 2 )
 custom_styles/normal = SubResource( 1 )
 text = "↑ ↓ ← → - MOVE
 k j h l - MOVE"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 144.0
-margin_right = 310.0
-margin_bottom = 432.0
+margin_top = 119.0
+margin_right = 318.0
+margin_bottom = 427.0
 custom_constants/margin_right = 40
-custom_constants/margin_top = 0
+custom_constants/margin_top = 40
 custom_constants/margin_left = 40
 custom_constants/margin_bottom = 0
 
 [node name="ActionToolContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
 margin_left = 40.0
-margin_right = 270.0
-margin_bottom = 288.0
+margin_top = 40.0
+margin_right = 278.0
+margin_bottom = 308.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+alignment = 2
 script = ExtResource( 2 )
 
 [node name="Water" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/ActionToolContainer"]
-margin_right = 230.0
+margin_right = 238.0
 margin_bottom = 40.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
@@ -115,7 +115,7 @@ align = 1
 
 [node name="Thresher" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/ActionToolContainer"]
 margin_top = 44.0
-margin_right = 230.0
+margin_right = 238.0
 margin_bottom = 84.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
@@ -124,7 +124,7 @@ align = 1
 
 [node name="Torch" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/ActionToolContainer"]
 margin_top = 88.0
-margin_right = 230.0
+margin_right = 238.0
 margin_bottom = 128.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
@@ -133,7 +133,7 @@ align = 1
 
 [node name="Seedbag" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/ActionToolContainer"]
 margin_top = 132.0
-margin_right = 230.0
+margin_right = 238.0
 margin_bottom = 172.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
@@ -142,14 +142,13 @@ align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ActionToolContainer"]
 margin_top = 176.0
-margin_right = 230.0
-margin_bottom = 288.0
+margin_right = 238.0
+margin_bottom = 268.0
 custom_constants/margin_top = 20
-custom_constants/margin_bottom = 20
 
 [node name="Label5" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/ActionToolContainer/MarginContainer"]
 margin_top = 20.0
-margin_right = 230.0
+margin_right = 238.0
 margin_bottom = 92.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )

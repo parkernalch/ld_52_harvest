@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://menu.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[node name="Menu" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="MenuPrompt" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 720.0
+margin_bottom = 470.0
+
+[node name="Label" type="Label" parent="MarginContainer/MenuPrompt"]
+margin_right = 710.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+text = "> harvest.sh"
+
+[node name="Label2" type="Label" parent="MarginContainer/MenuPrompt"]
+margin_top = 44.0
+margin_right = 710.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 2 )
+text = "> ... press [space] to continue to game 
+  ... press [h] to see help
+> _"
+
+[node name="HelpPrompt" type="VBoxContainer" parent="MarginContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 720.0
+margin_bottom = 470.0
+
+[node name="Label" type="Label" parent="MarginContainer/HelpPrompt"]
+margin_right = 710.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+text = "> harvest.sh --help"
+
+[node name="Label2" type="Label" parent="MarginContainer/HelpPrompt"]
+margin_top = 44.0
+margin_right = 710.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 2 )
+text = "> ... game by Parker Nalchajian
+  ... created in 20 hours for Ludum Dare 52
+  ... sounds by sfxr and bosca ceoil
+  ... @github/parkernalch/ld_52_harvest
+  ... press any key to continue"
+
+[node name="TitleScreen" type="CenterContainer" parent="MarginContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 720.0
+margin_bottom = 470.0
+
+[node name="Label3" type="Label" parent="MarginContainer/TitleScreen"]
+margin_left = 61.0
+margin_top = 99.0
+margin_right = 649.0
+margin_bottom = 360.0
+custom_fonts/font = SubResource( 3 )
+text = " _                               _         _     
+| |                             | |       | |    
+| |__   __ _ _ ____   _____  ___| |_   ___| |__  
+| '_ \\ / _` | '__\\ \\ / / _ \\/ __| __| / __| '_ \\ 
+| | | | (_| | |   \\ V /  __/\\__ \\ |_ _\\__ \\ | | |
+|_| |_|\\__,_|_|    \\_/ \\___||___/\\__(_)___/_| |_|
+                                                 
+                                                 "

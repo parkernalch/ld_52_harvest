@@ -19,6 +19,7 @@ func _draw():
 	pass
 	
 func _input(event):
+	var tool_changed = false
 	if event is InputEventKey:
 		if event.is_action_pressed("move_up"):
 			move_up()
@@ -32,7 +33,23 @@ func _input(event):
 			next_tool()
 		if event.is_action_pressed("use_ability"):
 			use_tool()
-	
+		if event.is_action_pressed("select_water"):
+			current_tool = Globals.ACTION_TOOLS.WATER
+			tool_changed = true
+		if event.is_action_pressed("select_burn"):
+			current_tool = Globals.ACTION_TOOLS.TORCH
+			tool_changed = true
+		if event.is_action_pressed("select_pick"):
+			current_tool = Globals.ACTION_TOOLS.THRESHER
+			tool_changed = true
+		if event.is_action_pressed("select_sow"):
+			current_tool = Globals.ACTION_TOOLS.SEEDBAG
+			EventBus.emit_signal("tool_changed", current_tool)
+			tool_changed = true
+	if tool_changed:
+		EventBus.emit_signal("tool_changed", current_tool)
+		select_current_cell()
+				
 func populate_farm(random_seed):
 	seed(random_seed)
 	cells = []
