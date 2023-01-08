@@ -1,0 +1,154 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://popup.gd" type="Script" id=2]
+[ext_resource path="res://ascii_bar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ripe_harvest_label.gd" type="Script" id=4]
+[ext_resource path="res://spoiled_harvest_label.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 1 )
+
+[node name="Popup" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 40
+custom_constants/margin_top = 40
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 40
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 680.0
+margin_bottom = 440.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 620.0
+margin_bottom = 380.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 580.0
+margin_bottom = 340.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+margin_right = 560.0
+margin_bottom = 216.0
+custom_constants/hseparation = 140
+columns = 2
+
+[node name="water_label" type="Label" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+margin_right = 208.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 6 )
+text = "water supply"
+
+[node name="water_bar" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource( 3 )]
+custom_fonts/font = SubResource( 7 )
+
+[node name="torch_label" type="Label" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 44.0
+margin_right = 208.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 6 )
+text = "torch fuel"
+
+[node name="torch_bar" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource( 3 )]
+margin_top = 44.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 7 )
+label_stat = 1
+
+[node name="seed_label" type="Label" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 88.0
+margin_right = 208.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 6 )
+text = "seed stores"
+
+[node name="seed_bar" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource( 3 )]
+margin_top = 88.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 7 )
+label_stat = 2
+
+[node name="Label7" type="Label" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 132.0
+margin_right = 208.0
+margin_bottom = 172.0
+custom_fonts/font = SubResource( 6 )
+text = "ripe harvests"
+
+[node name="Label8" type="Label" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 348.0
+margin_top = 132.0
+margin_right = 540.0
+margin_bottom = 172.0
+custom_fonts/font = SubResource( 6 )
+text = "0"
+align = 2
+script = ExtResource( 4 )
+
+[node name="Label9" type="Label" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 176.0
+margin_right = 208.0
+margin_bottom = 216.0
+custom_fonts/font = SubResource( 6 )
+text = "spoiled crops"
+
+[node name="Label10" type="Label" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 348.0
+margin_top = 176.0
+margin_right = 540.0
+margin_bottom = 216.0
+custom_fonts/font = SubResource( 6 )
+text = "0"
+align = 2
+script = ExtResource( 5 )
+
+[node name="reset_label" type="Label" parent="Panel/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+margin_top = 220.0
+margin_right = 560.0
+margin_bottom = 303.0
+custom_fonts/font = SubResource( 6 )
+text = "
+...... press [r] to restart"

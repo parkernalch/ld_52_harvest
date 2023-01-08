@@ -28,21 +28,18 @@ func _unhandled_key_input(event):
 	pass
 	
 func to_menu():
-	print("going to help")
 	menu.set_modulate(Color.white)
 	help.set_modulate(Color.transparent)
 	title.set_modulate(Color.transparent)
 	current_view = "menu"
 	
 func to_help():
-	print("going to help")
 	menu.set_modulate(Color.transparent)
 	help.set_modulate(Color.white)
 	title.set_modulate(Color.transparent)
 	current_view = "help"
 	
 func to_title():
-	print("going to title")
 	menu.set_modulate(Color.transparent)
 	help.set_modulate(Color.transparent)
 	title.set_modulate(Color.white)
@@ -51,5 +48,4 @@ func to_title():
 	to_game()
 	
 func to_game():
-	print("going to game")
 	get_tree().change_scene_to(game_scene)

@@ -13,7 +13,17 @@ func _ready():
 	current_tool = Globals.ACTION_TOOLS.WATER
 	yield(get_tree(), "idle_frame")
 	EventBus.emit_signal("tool_changed", current_tool)
+	EventBus.connect("restart_game", self, "_on_restart_game")
 	pass
+	
+func _on_restart_game():
+	clear_farm()
+	populate_farm(randi())
+	
+func clear_farm():
+	for i in len(cells):
+		for j in len(cells[i]):
+			cells[j][i].queue_free()
 	
 func _draw():
 	pass
@@ -165,5 +175,15 @@ func next_tool():
 
 func use_tool():
 	var selected_cell = cells[selected_index[1]][selected_index[0]]
+	match current_tool:
+		Globals.ACTION_TOOLS.WATER:
+			if not Globals.use_water():
+				return
+		Globals.ACTION_TOOLS.SEEDBAG:
+			if not Globals.use_seed():
+				return
+		Globals.ACTION_TOOLS.TORCH:
+			if not Globals.use_torch():
+				return
 	selected_cell.apply_tool_action(current_tool)
 	apply_to_neighbors()

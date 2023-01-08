@@ -42,9 +42,10 @@ text = "> harvest.sh"
 [node name="Label2" type="Label" parent="MarginContainer/MenuPrompt"]
 margin_top = 44.0
 margin_right = 710.0
-margin_bottom = 170.0
+margin_bottom = 213.0
 custom_fonts/font = SubResource( 2 )
-text = "> ... press [space] to continue to game 
+text = "  ... v0.3
+  ... press [space] to continue to game 
   ... press [h] to see help
 > _"
 
